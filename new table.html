@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>enter row</h2>
+    <input type="text" id="row">
+    <h2>enter column</h2>
+    <input type="text" id="column">
+    <input type="button" value="create table" onclick="result()">
+    <p id="p"></p>
+    <script>
+      
+        function result() {
+            const row = parseInt(document.getElementById("row").value)
+            const column = parseInt(document.getElementById("column").value)
+            let table = '<table border = "2">'
+            let counter = 1
+
+            for(let i=0; i<row; i++){
+                table += "<tr>"
+                for(let j=0; j<column; j++){
+                    table += `<td>${counter}</td>`
+                    counter++
+                }
+                table += "</tr>"
+            }
+            table += "</table>"
+            document.getElementById("p").innerHTML = table
+        }
+    </script>
+</body>
+</html>
